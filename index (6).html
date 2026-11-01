@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Марія Панченко — Бухгалтерський та фінансовий супровід</title>
+<meta name="description" content="Професійний бухгалтерський та фінансовий супровід для ФОП і ТОВ. Марія Панченко — більше 15 років досвіду. Кропивницький та онлайн по всій Україні.">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   МАРІЯ ПАНЧЕНКО — Бухгалтер / Фін.директор
+   Palette:
+     --blue   #1B3D6E  deep navy
+     --blue2  #0F2A52  darker navy
+     --blue3  #2B5499  mid blue
+     --orange #F07B1D  warm orange
+     --orange2#E86C0A  deeper orange
+     --beige  #F5EDDF  warm beige
+     --beige2 #EDE1CF  deeper beige
+     --white  #FFFFFF
+     --ink    #1C1C1C
+   Fonts: Raleway (UI) + Merriweather (headings)
+   ══════════════════════════════════════════ */
+
+:root{
+  --blue:    #1B3D6E;
+  --blue2:   #0F2A52;
+  --blue3:   #2B5499;
+  --blue-lt: #E8EEF7;
+  --orange:  #F07B1D;
+  --orange2: #E86C0A;
+  --orange-lt:#FEF0E3;
+  --beige:   #F5EDDF;
+  --beige2:  #EDE1CF;
+  --beige3:  #E0D0B8;
+  --white:   #FFFFFF;
+  --ink:     #1C1C1C;
+  --ink2:    #2E2E2E;
+  --muted:   #6B7280;
+  --line:    #DDD5C5;
+  --r:       14px;
+  --r-sm:    8px;
+  --sh:      0 4px 24px rgba(27,61,110,.1);
+  --sh-lg:   0 16px 52px rgba(27,61,110,.16);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Raleway',sans-serif;
+  background:var(--white);color:var(--ink);
+  line-height:1.65;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Merriweather',serif;line-height:1.25}
+em{font-style:italic;color:var(--orange)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+
+/* ── routing ── */
+.page{display:none}
+.page.active{display:block;animation:pgIn .4s ease both}
+@keyframes pgIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ══════ BUTTONS ══════ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:'Raleway',sans-serif;font-weight:700;font-size:.88rem;
+  padding:14px 30px;border:2px solid transparent;
+  border-radius:50px;cursor:pointer;transition:all .22s ease;white-space:nowrap;
+}
+.btn-primary{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn-primary:hover{background:var(--orange2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(240,123,29,.35)}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn-blue:hover{background:var(--blue2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(27,61,110,.3)}
+.btn-outline{background:transparent;color:var(--blue);border-color:var(--blue)}
+.btn-outline:hover{background:var(--blue);color:#fff}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-outline-light:hover{background:rgba(255,255,255,.12);border-color:#fff}
+.btn-outline-orange{background:transparent;color:var(--orange);border-color:var(--orange)}
+.btn-outline-orange:hover{background:var(--orange);color:#fff}
+.btn-sm{padding:10px 22px;font-size:.8rem}
+.btn-lg{padding:17px 36px;font-size:.95rem}
+.btn-full{width:100%;justify-content:center}
+
+/* ══════ NAV ══════ */
+.nav{
+  position:sticky;top:0;z-index:500;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;height:76px;gap:1.5rem}
+.nav-logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+.nav-logo-mark{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--blue);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Merriweather',serif;font-size:1.1rem;font-style:italic;flex-shrink:0;
+}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.2}
+.nav-logo-name{font-family:'Merriweather',serif;font-size:1rem;font-weight:700;color:var(--blue)}
+.nav-logo-sub{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:.2rem;flex:1;justify-content:center}
+.nav-link{
+  font-size:.82rem;font-weight:600;color:var(--muted);
+  padding:8px 15px;border-radius:50px;transition:all .18s;cursor:pointer;
+}
+.nav-link:hover,.nav-link.active{color:var(--blue);background:var(--blue-lt)}
+.nav-right{display:flex;align-items:center;gap:.75rem;margin-left:auto}
+.nav-phone{
+  display:flex;align-items:center;gap:8px;
+  font-size:.85rem;font-weight:700;color:var(--blue);
+}
+.nav-phone-dot{width:7px;height:7px;border-radius:50%;background:#5CB85C;animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hamb{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hamb span{display:block;width:22px;height:2px;background:var(--blue);border-radius:2px}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:600;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem}
+.mob-menu.open{display:flex}
+.mob-close{position:absolute;top:1.4rem;right:1.8rem;background:none;border:none;font-size:1.8rem;cursor:pointer;color:var(--muted)}
+.mob-link{font-family:'Merriweather',serif;font-size:1.5rem;color:var(--blue);cursor:pointer}
+.mob-link:hover{color:var(--orange)}
+
+/* ══════ HERO ══════ */
+.hero{
+  background:linear-gradient(135deg,var(--blue2) 0%,var(--blue) 50%,var(--blue3) 100%);
+  padding:5.5rem 0 4rem;position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;right:-150px;top:-150px;
+  width:550px;height:550px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,123,29,.18) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:28px 28px;
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 380px;gap:4rem;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(240,123,29,.2);border:1px solid rgba(240,123,29,.4);
+  color:#FFB87A;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:7px 18px;border-radius:50px;margin-bottom:1.6rem;
+}
+.hero-title{
+  font-size:clamp(2rem,4.5vw,3.4rem);color:#fff;
+  margin-bottom:.5rem;font-weight:700;
+}
+.hero-title em{font-style:italic;color:#FFB87A;font-family:'Merriweather',serif}
+.hero-name{
+  font-family:'Merriweather',serif;font-size:clamp(2.4rem,5vw,4rem);
+  color:#fff;margin-bottom:1.4rem;font-weight:700;font-style:italic;
+}
+.hero-sub{
+  font-size:.96rem;color:rgba(255,255,255,.72);
+  max-width:490px;margin-bottom:2.2rem;font-weight:400;line-height:1.9;
+}
+.hero-ctas{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.8rem}
+.hero-contacts{
+  display:flex;gap:1.5rem;flex-wrap:wrap;
+  padding-top:1.8rem;border-top:1px solid rgba(255,255,255,.14);
+}
+.hero-contact-item{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.82rem;color:rgba(255,255,255,.7);font-weight:500;
+}
+.hero-contact-item a{color:rgba(255,255,255,.85);transition:color .18s}
+.hero-contact-item a:hover{color:#FFB87A}
+
+/* Hero card */
+.hero-card{
+  background:rgba(255,255,255,.1);backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.18);border-radius:var(--r);
+  padding:2.2rem;
+}
+.hero-card-title{
+  font-family:'Merriweather',serif;font-size:1.1rem;
+  color:#fff;margin-bottom:1.4rem;font-style:italic;
+}
+.hero-stat-list{display:flex;flex-direction:column;gap:1rem}
+.hero-stat-item{
+  display:flex;align-items:center;gap:1rem;
+  padding:.9rem 1rem;background:rgba(255,255,255,.08);
+  border-radius:var(--r-sm);border-left:3px solid var(--orange);
+}
+.hero-stat-num{
+  font-family:'Merriweather',serif;font-size:1.6rem;
+  color:var(--orange);font-weight:700;line-height:1;white-space:nowrap;
+}
+.hero-stat-label{font-size:.78rem;color:rgba(255,255,255,.75);font-weight:500;line-height:1.4}
+
+/* ══════ TICKER ══════ */
+.ticker{background:var(--orange);padding:.8rem 0;overflow:hidden}
+.ticker-track{display:flex;animation:tAnim 28s linear infinite;white-space:nowrap}
+.ticker-item{
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:#fff;padding:0 2.4rem;display:flex;align-items:center;gap:1.4rem;
+}
+.ticker-item::after{content:'◆';font-size:.5rem;opacity:.6}
+@keyframes tAnim{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════ SECTIONS ══════ */
+.section{padding:6rem 0}
+.section-sm{padding:4rem 0}
+.section-beige{background:var(--beige)}
+.section-beige2{background:var(--beige2)}
+.section-blue{background:var(--blue);color:#fff}
+.section-blue2{background:var(--blue2);color:#fff}
+.s-label{
+  font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:.7rem;display:flex;align-items:center;gap:.7rem;
+}
+.s-label::before{content:'';width:1.6rem;height:2px;background:var(--orange)}
+.s-label-light::before{background:#FFB87A}
+.s-label-light{color:#FFB87A}
+.s-title{
+  font-size:clamp(1.9rem,3.8vw,3rem);margin-bottom:.9rem;color:var(--blue);
+}
+.section-blue .s-title,.section-blue2 .s-title{color:#fff}
+.s-sub{font-size:.95rem;color:var(--muted);max-width:540px;line-height:1.9;font-weight:400}
+.section-blue .s-sub,.section-blue2 .s-sub{color:rgba(255,255,255,.7)}
+.s-head{margin-bottom:3rem}
+.s-head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;flex-wrap:wrap;margin-bottom:3rem}
+
+/* ══════ VALUES ══════ */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.value-card{
+  background:var(--white);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:2.2rem;position:relative;overflow:hidden;
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.value-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--orange));
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.value-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);border-color:rgba(27,61,110,.2)}
+.value-card:hover::before{transform:scaleX(1)}
+.value-icon{font-size:2.2rem;margin-bottom:1rem}
+.value-title{font-family:'Merriweather',serif;font-size:1.1rem;color:var(--blue);margin-bottom:.6rem;font-style:italic}
+.value-desc{font-size:.86rem;color:var(--muted);line-height:1.85}
+
+/* ══════ SERVICES ══════ */
+.services-tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.stab{
+  padding:10px 22px;border:2px solid var(--line);border-radius:50px;
+  font-size:.82rem;font-weight:700;background:var(--white);cursor:pointer;transition:all .2s;color:var(--muted);
+}
+.stab.active,.stab:hover{border-color:var(--orange);background:var(--orange);color:#fff}
+
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.service-item{
+  background:var(--white);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:1.8rem;display:flex;gap:1rem;align-items:flex-start;
+  transition:all .25s;
+}
+.service-item:hover{border-color:var(--blue);box-shadow:var(--sh);transform:translateY(-3px)}
+.service-num{
+  width:38px;height:38px;border-radius:50%;background:var(--blue);
+  color:#fff;font-weight:700;font-size:.88rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.service-name{font-family:'Merriweather',serif;font-size:1rem;color:var(--blue);margin-bottom:.5rem;font-style:italic}
+.service-desc{font-size:.82rem;color:var(--muted);line-height:1.8}
+.service-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.8rem}
+.stag{
+  font-size:.66rem;font-weight:700;letter-spacing:.06em;
+  background:var(--blue-lt);color:var(--blue);padding:3px 10px;border-radius:50px;
+}
+
+/* ══════ NUMBERS ══════ */
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.1)}
+.number-item{
+  padding:2.5rem 1.5rem;text-align:center;
+  background:var(--blue);transition:background .2s;
+}
+.number-item:hover{background:var(--blue2)}
+.number-big{
+  font-family:'Merriweather',serif;font-size:2.8rem;
+  color:var(--orange);line-height:1;font-weight:700;
+}
+.number-label{font-size:.78rem;color:rgba(255,255,255,.65);margin-top:.5rem;font-weight:600}
+
+/* ══════ STORY / ABOUT ══════ */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.timeline{display:flex;flex-direction:column;position:relative}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:var(--beige3)}
+.tl-item{display:flex;gap:1.5rem;padding:0 0 2.2rem 3.5rem;position:relative}
+.tl-dot{
+  position:absolute;left:0;top:2px;width:42px;height:42px;border-radius:50%;
+  background:var(--blue);color:#fff;border:4px solid var(--beige);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Merriweather',serif;font-size:.78rem;font-weight:700;z-index:1;
+  box-shadow:0 0 0 1px var(--beige3);flex-shrink:0;
+}
+.tl-year{font-family:'Merriweather',serif;font-size:1.15rem;color:var(--orange);margin-bottom:.25rem;font-style:italic}
+.tl-title{font-size:.9rem;font-weight:700;color:var(--blue);margin-bottom:.35rem}
+.tl-desc{font-size:.82rem;color:var(--muted);line-height:1.8}
+
+.quote-block{
+  background:var(--blue);border-radius:var(--r);padding:2.8rem;
+  position:relative;overflow:hidden;
+}
+.quote-block::before{
+  content:'❝';position:absolute;top:-1rem;left:1.5rem;
+  font-size:7rem;color:rgba(240,123,29,.18);line-height:1;pointer-events:none;
+}
+.quote-text{
+  font-family:'Merriweather',serif;font-style:italic;font-size:1.05rem;
+  color:#fff;line-height:1.85;margin-bottom:1.4rem;position:relative;z-index:1;
+}
+.quote-author{font-size:.8rem;color:rgba(255,255,255,.6);font-weight:600;position:relative;z-index:1}
+.quote-author span{color:var(--orange)}
+
+/* ══════ TEAM ══════ */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.team-card{
+  background:var(--white);border:1.5px solid var(--line);border-radius:var(--r);
+  overflow:hidden;transition:transform .28s,box-shadow .28s;
+}
+.team-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.team-img{aspect-ratio:4/5;overflow:hidden;background:var(--beige2);position:relative}
+.team-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.team-card:hover .team-img img{transform:scale(1.05)}
+.team-img-placeholder{
+  width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+  font-size:4rem;color:var(--beige3);
+}
+.team-body{padding:1.4rem}
+.team-name{font-family:'Merriweather',serif;font-size:1.1rem;color:var(--blue);margin-bottom:.25rem;font-style:italic}
+.team-role{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.6rem}
+.team-desc{font-size:.82rem;color:var(--muted);line-height:1.8}
+
+/* ══════ REVIEWS ══════ */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.review-card{
+  background:var(--white);border:1.5px solid var(--line);border-radius:var(--r);
+  padding:1.8rem;transition:transform .22s,box-shadow .22s;
+}
+.review-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.review-stars{color:var(--orange);font-size:.95rem;margin-bottom:1rem}
+.review-text{
+  font-family:'Merriweather',serif;font-style:italic;font-size:.98rem;
+  color:var(--ink2);line-height:1.8;margin-bottom:1.3rem;
+}
+.review-author{display:flex;align-items:center;gap:10px}
+.review-av{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--blue);color:#fff;font-weight:700;font-size:.82rem;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.review-name strong{display:block;font-size:.86rem;color:var(--ink)}
+.review-name span{font-size:.74rem;color:var(--muted)}
+
+/* ══════ CTA BANNER ══════ */
+.cta-banner{
+  background:linear-gradient(135deg,var(--blue2),var(--blue));
+  border-radius:24px;padding:4rem;position:relative;overflow:hidden;
+  display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;
+  color:#fff;
+}
+.cta-banner::before{
+  content:'';position:absolute;right:-80px;top:-80px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,123,29,.2) 0%,transparent 70%);
+  pointer-events:none;
+}
+.cta-banner::after{
+  content:'';position:absolute;left:-50px;bottom:-80px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-title{font-family:'Merriweather',serif;font-size:clamp(1.6rem,3vw,2.4rem);color:#fff;margin-bottom:.6rem;font-style:italic}
+.cta-sub{font-size:.92rem;color:rgba(255,255,255,.78);max-width:480px}
+.cta-actions{position:relative;z-index:1;display:flex;flex-direction:column;gap:.7rem;flex-shrink:0}
+
+/* ══════ FAQ ══════ */
+.faq-list{display:flex;flex-direction:column;gap:.6rem}
+.faq-item{border:1.5px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--white)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:1.2rem 1.5rem;background:none;border:none;cursor:pointer;
+  font-family:'Raleway',sans-serif;font-size:.9rem;font-weight:700;text-align:left;
+  transition:background .15s;color:var(--ink);
+}
+.faq-q:hover{background:var(--beige)}
+.faq-q.open{background:var(--blue-lt);color:var(--blue)}
+.faq-icon{font-size:1.1rem;color:var(--orange);flex-shrink:0;transition:transform .25s}
+.faq-q.open .faq-icon{transform:rotate(45deg)}
+.faq-a{font-size:.85rem;color:var(--muted);line-height:1.85;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.faq-a.open{max-height:300px;padding:0 1.5rem 1.3rem}
+
+/* ══════ CONTACT PAGE ══════ */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start}
+.contact-block{
+  display:flex;gap:1.1rem;padding:1.3rem;
+  border:1.5px solid var(--line);border-radius:var(--r);background:var(--white);
+  margin-bottom:.9rem;transition:border-color .2s;
+}
+.contact-block:hover{border-color:var(--blue)}
+.contact-icon{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--blue-lt);display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;flex-shrink:0;
+}
+.contact-block h4{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:.3rem}
+.contact-block p{font-size:.9rem;font-weight:600;color:var(--ink)}
+.contact-block a{color:var(--blue);font-weight:600;transition:color .18s}
+.contact-block a:hover{color:var(--orange)}
+.contact-block small{font-size:.78rem;color:var(--muted)}
+
+.form-card{background:var(--white);border:1.5px solid var(--line);border-radius:var(--r);padding:2.4rem;box-shadow:var(--sh-lg)}
+.form-title{font-family:'Merriweather',serif;font-size:1.6rem;font-style:italic;color:var(--blue);margin-bottom:.4rem}
+.form-sub{font-size:.84rem;color:var(--muted);margin-bottom:1.6rem;line-height:1.75}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-group{display:flex;flex-direction:column;gap:.38rem;margin-bottom:.9rem}
+.form-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--blue)}
+.form-input{
+  padding:12px 15px;background:var(--beige);border:1.5px solid var(--line);
+  border-radius:var(--r-sm);font-family:'Raleway',sans-serif;font-size:.88rem;
+  color:var(--ink);outline:none;transition:border-color .15s,background .15s;
+}
+.form-input:focus{border-color:var(--blue);background:var(--white)}
+.form-input::placeholder{color:var(--muted)}
+select.form-input{cursor:pointer}
+textarea.form-input{resize:vertical;min-height:100px}
+.form-success{display:none;background:#EEF5EE;border:1px solid #B5D5B5;border-radius:var(--r-sm);padding:.9rem 1.2rem;color:#2D6A2D;font-size:.86rem;font-weight:600;margin-top:.8rem}
+.form-success.show{display:block}
+
+/* ══════ PAGE HERO ══════ */
+.page-hero{
+  background:linear-gradient(135deg,var(--blue2) 0%,var(--blue) 70%,var(--blue3) 100%);
+  padding:5rem 0 4rem;position:relative;overflow:hidden;margin-top:0;
+}
+.page-hero::before{
+  content:'';position:absolute;right:-100px;top:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,123,29,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.breadcrumb{display:flex;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:1rem;position:relative;z-index:1;flex-wrap:wrap}
+.breadcrumb span{color:#FFB87A;cursor:pointer}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem);position:relative;z-index:1}
+.page-hero p{color:rgba(255,255,255,.65);margin-top:.6rem;font-size:.96rem;position:relative;z-index:1;max-width:520px}
+
+/* ══════ MODAL ══════ */
+.modal-overlay{
+  position:fixed;inset:0;background:rgba(15,42,82,.6);z-index:800;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .25s;padding:1rem;
+}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{
+  background:var(--white);border-radius:var(--r);max-width:540px;width:100%;
+  padding:2.6rem;position:relative;
+  transform:translateY(18px) scale(.97);transition:transform .25s;overflow:hidden;
+}
+.modal-overlay.open .modal{transform:translateY(0) scale(1)}
+.modal::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+.modal-close{position:absolute;top:1.2rem;right:1.4rem;background:var(--beige);border:none;width:33px;height:33px;border-radius:50%;color:var(--muted);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--orange-lt);color:var(--orange)}
+.modal-eyebrow{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:var(--orange);margin-bottom:.5rem}
+.modal-title{font-family:'Merriweather',serif;font-size:1.7rem;font-style:italic;color:var(--blue);margin-bottom:.4rem}
+.modal-sub{font-size:.84rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.75}
+
+/* ══════ FOOTER ══════ */
+.footer{background:var(--blue2);color:#fff;padding:4.5rem 0 0}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand{font-family:'Merriweather',serif;font-size:1.3rem;font-style:italic;color:#fff;margin-bottom:.6rem}
+.footer-desc{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.85;max-width:240px;margin-bottom:1.3rem}
+.footer-socials{display:flex;gap:.5rem}
+.fsoc{
+  width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);
+  border:none;color:rgba(255,255,255,.55);display:flex;align-items:center;
+  justify-content:center;font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.fsoc:hover{background:var(--orange);color:#fff}
+.footer-col h4{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(240,123,29,.75);margin-bottom:1rem}
+.footer-col a,.footer-col span{display:block;font-size:.84rem;color:rgba(255,255,255,.55);margin-bottom:.55rem;cursor:pointer;transition:color .15s}
+.footer-col a:hover,.footer-col span:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.footer-copy{font-size:.76rem;color:rgba(255,255,255,.3)}
+.footer-legal{display:flex;gap:1.2rem}
+.footer-legal a{font-size:.76rem;color:rgba(255,255,255,.3)}
+.footer-legal a:hover{color:rgba(255,255,255,.7)}
+
+/* ══════ FLOAT CTA ══════ */
+.float-cta{
+  position:fixed;bottom:2rem;right:2rem;z-index:400;
+  background:var(--orange);color:#fff;border:none;
+  font-family:'Raleway',sans-serif;font-weight:700;font-size:.84rem;
+  padding:15px 26px;border-radius:50px;cursor:pointer;
+  display:flex;align-items:center;gap:9px;
+  box-shadow:0 10px 28px rgba(240,123,29,.42);
+  transition:all .22s;animation:pulseCta 2.8s ease-in-out infinite;
+}
+.float-cta:hover{background:var(--orange2);transform:translateY(-3px) scale(1.03)}
+@keyframes pulseCta{0%,100%{box-shadow:0 10px 28px rgba(240,123,29,.42)}50%{box-shadow:0 10px 28px rgba(240,123,29,.6),0 0 0 8px rgba(240,123,29,.08)}}
+
+/* ══════ TOAST ══════ */
+.toast{
+  position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(90px);
+  z-index:900;background:var(--blue2);color:var(--beige);
+  border-left:4px solid var(--orange);
+  padding:13px 24px;border-radius:var(--r-sm);font-size:.84rem;font-weight:600;
+  box-shadow:var(--sh-lg);opacity:0;transition:transform .3s,opacity .3s;white-space:nowrap;
+}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+/* ══════ RESPONSIVE ══════ */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .values-grid,.team-grid,.reviews-grid{grid-template-columns:repeat(2,1fr)}
+  .numbers-grid{grid-template-columns:repeat(2,1fr)}
+  .services-grid{grid-template-columns:1fr}
+  .story-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .cta-banner{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links,.nav-phone{display:none}
+  .nav-right .btn{display:none}
+  .hamb{display:flex}
+  .values-grid,.team-grid,.reviews-grid,.numbers-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-contacts{flex-direction:column;gap:.8rem}
+  .hero-ctas{flex-direction:column}
+  .section{padding:4rem 0}
+  .float-cta .fc-text{display:none}
+  .float-cta{padding:15px;border-radius:50%}
+  .cta-actions{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <div class="nav-logo" onclick="goPage('home')">
+      <div class="nav-logo-mark">МП</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">Марія Панченко</span>
+        <span class="nav-logo-sub">Бухгалтер · Фін. директор</span>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <span class="nav-link active" id="nl-home" onclick="goPage('home')">Головна</span>
+      <span class="nav-link" id="nl-fop" onclick="goPage('fop')">Послуги для ФОП</span>
+      <span class="nav-link" id="nl-tov" onclick="goPage('tov')">Послуги для ТОВ</span>
+      <span class="nav-link" id="nl-about" onclick="goPage('about')">Про нас</span>
+      <span class="nav-link" id="nl-contact" onclick="goPage('contact')">Контакти</span>
+    </nav>
+    <div class="nav-right">
+      <span class="nav-phone">
+        <span class="nav-phone-dot"></span>
+        <a href="tel:+380663568040">066-356-80-40</a>
+      </span>
+      <button class="btn btn-primary btn-sm" onclick="openModal()">Залишити заявку</button>
+      <button class="hamb" onclick="document.getElementById('mobMenu').classList.add('open')"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open')">✕</button>
+  <span class="mob-link" onclick="goPage('home');closeMob()">Головна</span>
+  <span class="mob-link" onclick="goPage('fop');closeMob()">Послуги для ФОП</span>
+  <span class="mob-link" onclick="goPage('tov');closeMob()">Послуги для ТОВ</span>
+  <span class="mob-link" onclick="goPage('about');closeMob()">Про нас</span>
+  <span class="mob-link" onclick="goPage('contact');closeMob()">Контакти</span>
+  <button class="btn btn-primary btn-lg" onclick="openModal();closeMob()">Залишити заявку</button>
+</div>
+
+<!-- ████████  HOME  ████████ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">💼 Бухгалтерія · Фінанси · Управління</div>
+          <h1 class="hero-title">Ваш надійний партнер —</h1>
+          <div class="hero-name">Марія Панченко</div>
+          <p class="hero-sub">Більше 15 років досвіду у бухгалтерії та фінансовому управлінні. Супровід ФОП і ТОВ будь-якої складності — онлайн по всій Україні та в Кропивницькому.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary btn-lg" onclick="openModal()">Отримати консультацію</button>
+            <button class="btn btn-outline-light btn-lg" onclick="goPage('fop')">Послуги для ФОП →</button>
+          </div>
+          <div class="hero-contacts">
+            <div class="hero-contact-item">📞 <a href="tel:+380663568040">066-356-80-40</a></div>
+            <div class="hero-contact-item">✈️ <a href="https://t.me/MariiaPanchenko_ua" target="_blank">@MariiaPanchenko_ua</a></div>
+            <div class="hero-contact-item">📸 <a href="https://instagram.com/Mariia_Panchenko_ua" target="_blank">@Mariia_Panchenko_ua</a></div>
+          </div>
+        </div>
+
+        <!-- Stat card -->
+        <div class="hero-card">
+          <div class="hero-card-title">Наші результати</div>
+          <div class="hero-stat-list">
+            <div class="hero-stat-item">
+              <div class="hero-stat-num">15+</div>
+              <div class="hero-stat-label">років досвіду в бухгалтерії та фінансах</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num">26+</div>
+              <div class="hero-stat-label">активних клієнтів (ФОП + ТОВ)</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num">200+</div>
+              <div class="hero-stat-label">людей в команді клієнта під управлінням</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num">7 р.</div>
+              <div class="hero-stat-label">компанія зростає на рекомендаціях клієнтів</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">Бухгалтерський супровід ФОП</span>
+      <span class="ticker-item">Повний облік ТОВ</span>
+      <span class="ticker-item">Кадровий облік</span>
+      <span class="ticker-item">Фінансовий директор</span>
+      <span class="ticker-item">Реєстрація ФОП та ТОВ</span>
+      <span class="ticker-item">Управлінський облік</span>
+      <span class="ticker-item">Фінансовий моніторинг</span>
+      <span class="ticker-item">Бухгалтерський супровід ФОП</span>
+      <span class="ticker-item">Повний облік ТОВ</span>
+      <span class="ticker-item">Кадровий облік</span>
+      <span class="ticker-item">Фінансовий директор</span>
+      <span class="ticker-item">Реєстрація ФОП та ТОВ</span>
+      <span class="ticker-item">Управлінський облік</span>
+      <span class="ticker-item">Фінансовий моніторинг</span>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="s-head" style="text-align:center">
+        <p class="s-label" style="justify-content:center">Чому обирають нас</p>
+        <h2 class="s-title" style="text-align:center">Наші цінності</h2>
+        <p class="s-sub" style="max-width:620px;margin:0 auto">Бухгалтерія — це не просто документи для податкової. Це ваш спокій і безпека зараз і в майбутньому.</p>
+      </div>
+      <div style="margin-top:3rem">
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">💛</div>
+            <div class="value-title">Любов до людей і бізнесу</div>
+            <p class="value-desc">Для кожного бізнесу та власника ми підбираємо зручний документообіг і розподіляємо точки контролю. Допомагаємо власнику управляти бізнесом через цифри.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🔍</div>
+            <div class="value-title">Вирішуємо, а не несемо проблеми</div>
+            <p class="value-desc">У будь-якій ситуації ми надаємо варіанти рішень. В роботі з нами немає неможливих ситуацій — ми шукаємо всі можливі варіанти залежно від запиту.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">⚖️</div>
+            <div class="value-title">Баланс роботи і відпочинку</div>
+            <p class="value-desc">Наші фахівці не працюють у вихідні і після 17:00. Гарно працює той, хто гарно відпочиває — тому ми управляємо роботою так, щоб все виконувалось якісно і вчасно.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section section-beige">
+    <div class="wrap">
+      <div class="s-head-row">
+        <div>
+          <p class="s-label">Що ми робимо</p>
+          <h2 class="s-title">Послуги</h2>
+          <p class="s-sub">Повний спектр бухгалтерського, фінансового та кадрового супроводу для ФОП і ТОВ.</p>
+        </div>
+        <div style="display:flex;gap:.7rem">
+          <button class="btn btn-outline" onclick="goPage('fop')">Для ФОП →</button>
+          <button class="btn btn-blue" onclick="goPage('tov')">Для ТОВ →</button>
+        </div>
+      </div>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-num">ФОП</div>
+          <div>
+            <div class="service-name">Реєстрація та супровід ФОП</div>
+            <p class="service-desc">Підбір КВЕДів, оптимальна система оподаткування, онлайн-реєстрація без участі власника. Щомісячний бухгалтерський супровід та контроль ліміту доходу.</p>
+            <div class="service-tags"><span class="stag">Реєстрація</span><span class="stag">Щомісячний облік</span><span class="stag">ПРРО</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">ТОВ</div>
+          <div>
+            <div class="service-name">Повний облік ТОВ</div>
+            <p class="service-desc">Єдиний податок, загальна система, з ПДВ/без ПДВ, експорт/імпорт. Первинні документи, клієнт-банк, звіти до податкової, статистики та ПФУ.</p>
+            <div class="service-tags"><span class="stag">ПДВ</span><span class="stag">Звіти</span><span class="stag">Клієнт-банк</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num" style="background:var(--orange)">УО</div>
+          <div>
+            <div class="service-name">Управлінський фінансовий облік</div>
+            <p class="service-desc">P&L, Cashflow, Balance. Аудит бізнес-процесів, виявлення проблемних точок, оптимізація процесів та збільшення прибутку для власника.</p>
+            <div class="service-tags"><span class="stag">P&L</span><span class="stag">Cashflow</span><span class="stag">Аудит</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num" style="background:var(--orange)">КО</div>
+          <div>
+            <div class="service-name">Кадровий облік</div>
+            <p class="service-desc">Прийняття на роботу (в т.ч. під гранти), трудові договори, нарахування ЗП, табель, лікарняні, декретні, звільнення та всі звіти.</p>
+            <div class="service-tags"><span class="stag">ЗП</span><span class="stag">Гранти</span><span class="stag">Декретні</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMBERS -->
+  <section class="section-sm">
+    <div class="wrap">
+      <div class="numbers-grid">
+        <div class="number-item"><div class="number-big">15+</div><div class="number-label">років досвіду</div></div>
+        <div class="number-item"><div class="number-big">26+</div><div class="number-label">активних клієнтів</div></div>
+        <div class="number-item"><div class="number-big">6</div><div class="number-label">типів компаній на обслуговуванні</div></div>
+        <div class="number-item"><div class="number-big">100%</div><div class="number-label">онлайн — вся Україна</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section section-beige">
+    <div class="wrap" style="max-width:820px">
+      <div class="quote-block">
+        <p class="quote-text">«Бухгалтерія — це не просто документи, які потрібні податковій. Бухгалтерія — це ваш спокій та безпека зараз і в майбутньому. Цифри бізнесу — це показники, за якими видно стан бізнесу для прийняття подальших рішень. Без цифр управління бізнесом неможливе — це тоді не управління, а ілюзія.»</p>
+        <div class="quote-author">— <span>Марія Панченко</span>, фінансовий директор та засновниця компанії</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="s-head-row">
+        <div>
+          <p class="s-label">Відгуки</p>
+          <h2 class="s-title">Нам довіряють</h2>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:'Merriweather',serif;font-size:2.4rem;color:var(--orange);font-weight:700">5.0</div>
+          <div style="color:var(--orange)">★★★★★</div>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Марія взяла на себе повний облік мого ФОП. Тепер я не думаю про податки — просто приходить нагадування, коли і що сплатити. Спокій і порядок.»</p>
+          <div class="review-author"><div class="review-av">ОК</div><div class="review-name"><strong>Олег Кравченко</strong><span>ФОП, послуги</span></div></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Нарешті знайшли бухгалтера, який не просто веде цифри, а ще й пояснює ситуацію в бізнесі. Після впровадження управлінського обліку ми побачили де "йдуть" гроші.»</p>
+          <div class="review-author"><div class="review-av">НВ</div><div class="review-name"><strong>Наталія Василенко</strong><span>Директор ТОВ, виробництво</span></div></div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">«Допомогли зареєструвати ФОП, підібрали КВЕДи і систему оподаткування. Все зробили онлайн без моєї участі. Рекомендую всім підприємцям-початківцям.»</p>
+          <div class="review-author"><div class="review-av">ДМ</div><div class="review-name"><strong>Денис Марченко</strong><span>ФОП, e-commerce</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-sm">
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 class="cta-title">Готові навести порядок у бізнесі?</h2>
+          <p class="cta-sub">Залиште заявку — безкоштовна перша консультація. Проаналізуємо вашу ситуацію і запропонуємо оптимальне рішення.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" onclick="openModal()">Отримати консультацію</button>
+          <a href="tel:+380663568040" class="btn btn-outline-light btn-lg">📞 Зателефонувати</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-beige">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;align-items:start">
+        <div>
+          <p class="s-label">FAQ</p>
+          <h2 class="s-title">Часті запитання</h2>
+          <p class="s-sub">Не знайшли відповідь? Напишіть нам — відповімо швидко та по суті.</p>
+          <button class="btn btn-blue" style="margin-top:1.5rem" onclick="openModal()">Поставити запитання</button>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Ви працюєте тільки в Кропивницькому? <span class="faq-icon">+</span></button><div class="faq-a">Ні, ми працюємо онлайн по всій Україні. Всі процеси налагоджені дистанційно — від реєстрації до подання звітів.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Скільки коштує бухгалтерський супровід? <span class="faq-icon">+</span></button><div class="faq-a">Вартість залежить від форми власності (ФОП/ТОВ), системи оподаткування, кількості операцій та наявності найманих працівників. Зв'яжіться з нами для отримання персональної пропозиції.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Чи можете ви перевести мене від іншого бухгалтера? <span class="faq-icon">+</span></button><div class="faq-a">Так, ми здійснюємо перехід від іншого бухгалтера. Проводимо аудит поточного стану обліку, виявляємо помилки та виправляємо їх.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Чи можу я звертатись до вас поза робочим часом? <span class="faq-icon">+</span></button><div class="faq-a">Ми працюємо до 17:00 у робочі дні. Зате в цей час ми максимально ефективні та зосереджені на вашому питанні. Всі термінові питання обговорюємо заздалегідь.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="tFaq(this)">Чи допомагаєте з управлінським обліком для власника? <span class="faq-icon">+</span></button><div class="faq-a">Так, це один з наших ключових напрямків. Розробляємо P&L, Cashflow, Balance; проводимо аудит бізнес-процесів та надаємо рекомендації щодо збільшення прибутковості.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+
+<!-- ████████  FOP  ████████ -->
+<div id="page-fop" class="page">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><span onclick="goPage('home')">Головна</span> / Послуги для ФОП</div>
+      <h1>Послуги для ФОП</h1>
+      <p>Повний бухгалтерський та фінансовий супровід підприємців — від реєстрації до закриття</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="services-grid">
+        <div class="service-item" style="border-color:var(--blue);border-width:2px">
+          <div class="service-num" style="width:44px;height:44px;font-size:.8rem">01</div>
+          <div>
+            <div class="service-name">Відкриття ФОП</div>
+            <p class="service-desc">Підбір КВЕДів відповідно до вашої діяльності, підбір оптимальної системи оподаткування, онлайн-реєстрація ФОП без особистої участі власника.</p>
+            <div class="service-tags"><span class="stag">КВЕДи</span><span class="stag">Онлайн</span><span class="stag">Без черг</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">02</div>
+          <div>
+            <div class="service-name">Щомісячний бухгалтерський супровід</div>
+            <p class="service-desc">Аудит особистого кабінету в податковій, реквізити для оплати, контроль своєчасності та правильності сплати податків, перевірка банківської виписки, контроль ліміту доходу, книга доходів, зміна КВЕДів онлайн, реєстрація ПРРО, первинні документи, звіти в податкову.</p>
+            <div class="service-tags"><span class="stag">Щомісяця</span><span class="stag">ПРРО</span><span class="stag">Книга доходів</span><span class="stag">Акти</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num" style="background:var(--orange)">03</div>
+          <div>
+            <div class="service-name">Фінансовий супровід ФОП</div>
+            <p class="service-desc">Автоматизація обліку в CRM-системах, розроблення структури компанії та бізнес-процесів. Розроблення фінансових документів під особистий запит власника бізнесу — первинні документи або фінансові звіти.</p>
+            <div class="service-tags"><span class="stag">CRM</span><span class="stag">Автоматизація</span><span class="stag">Бізнес-процеси</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num" style="background:var(--orange)">04</div>
+          <div>
+            <div class="service-name">Кадровий облік ФОП з працівниками</div>
+            <p class="service-desc">Прийняття на роботу (в т.ч. під гранти), трудові договори, нарахування заробітної плати, табель обліку робочого часу, лікарняні, декретні, звільнення, всі звіти.</p>
+            <div class="service-tags"><span class="stag">Трудові договори</span><span class="stag">ЗП</span><span class="stag">Гранти</span><span class="stag">Лікарняні</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">05</div>
+          <div>
+            <div class="service-name">Фінансовий моніторинг у банку</div>
+            <p class="service-desc">Супровід процедури фінансового моніторингу в банку будь-якої складності. Підготовка документів, пояснень та комунікація з банком у ваших інтересах.</p>
+            <div class="service-tags"><span class="stag">Банк</span><span class="stag">Будь-яка складність</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">06</div>
+          <div>
+            <div class="service-name">Закриття ФОП</div>
+            <p class="service-desc">Повний супровід процедури закриття ФОП: подача заяви, зняття з обліку в податковій, перевірка відсутності заборгованостей, фінальні звіти.</p>
+            <div class="service-tags"><span class="stag">Зняття з обліку</span><span class="stag">Фінальні звіти</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm section-beige">
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 class="cta-title">Відкрити або супроводжувати ФОП?</h2>
+          <p class="cta-sub">Залиште заявку — безкоштовно проконсультуємо та підберемо оптимальне рішення для вашого бізнесу.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" onclick="openModal()">Залишити заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /fop -->
+
+
+<!-- ████████  TOV  ████████ -->
+<div id="page-tov" class="page">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><span onclick="goPage('home')">Головна</span> / Послуги для ТОВ</div>
+      <h1>Послуги для ТОВ</h1>
+      <p>Повний бухгалтерський, фінансовий та управлінський супровід товариств з обмеженою відповідальністю</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <!-- Tab 1: Full accounting -->
+      <div style="background:var(--beige);border-radius:var(--r);padding:2.5rem;margin-bottom:1.4rem">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+          <div class="service-num" style="width:48px;height:48px;font-size:.85rem;flex-shrink:0">01</div>
+          <div>
+            <div class="service-name" style="margin:0">Відкриття ТОВ</div>
+            <p style="font-size:.82rem;color:var(--muted);margin-top:.2rem">Підбір КВЕДів, оптимальна система оподаткування, онлайн-реєстрація згідно модульного статуту.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="border:2px solid var(--blue);border-radius:var(--r);padding:2.5rem;margin-bottom:1.4rem">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem">
+          <div class="service-num" style="width:48px;height:48px;font-size:.85rem;flex-shrink:0">02</div>
+          <div>
+            <div class="service-name" style="margin:0">Щомісячний повний бухгалтерський супровід ТОВ</div>
+            <p style="font-size:.82rem;color:var(--muted);margin-top:.2rem">Єдиний податок, загальна система, з ПДВ/без ПДВ, експорт/імпорт</p>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="service-item" style="border:none;background:var(--white);padding:1.2rem">
+            <div style="font-size:1.3rem">📄</div>
+            <div>
+              <div class="service-name" style="font-size:.9rem">Первинні документи</div>
+              <p class="service-desc">Рахунки, накладні, акти, договори, ТТН, ПРРО, акти звірок</p>
+            </div>
+          </div>
+          <div class="service-item" style="border:none;background:var(--white);padding:1.2rem">
+            <div style="font-size:1.3rem">🏦</div>
+            <div>
+              <div class="service-name" style="font-size:.9rem">Клієнт-банк</div>
+              <p class="service-desc">Оформлення платежів, проведення в ПЗ, контроль взаєморозрахунків</p>
+            </div>
+          </div>
+          <div class="service-item" style="border:none;background:var(--white);padding:1.2rem">
+            <div style="font-size:1.3rem">👥</div>
+            <div>
+              <div class="service-name" style="font-size:.9rem">Кадровий облік</div>
+              <p class="service-desc">Прийняття під гранти, ЗП, табель, лікарняні, декретні, звільнення</p>
+            </div>
+          </div>
+          <div class="service-item" style="border:none;background:var(--white);padding:1.2rem">
+            <div style="font-size:1.3rem">📊</div>
+            <div>
+              <div class="service-name" style="font-size:.9rem">ПДВ</div>
+              <p class="service-desc">Реєстрація та розблокування податкових накладних, звіти з ПДВ</p>
+            </div>
+          </div>
+          <div class="service-item" style="border:none;background:var(--white);padding:1.2rem">
+            <div style="font-size:1.3rem">📈</div>
+            <div>
+              <div class="service-name" style="font-size:.9rem">Управлінський облік</div>
+              <p class="service-desc">P&L, Cashflow, Balance. Аудит процесів, оптимізація, збільшення прибутку</p>
+            </div>
+          </div>
+          <div class="service-item" style="border:none;background:var(--white);padding:1.2rem">
+            <div style="font-size:1.3rem">📑</div>
+            <div>
+              <div class="service-name" style="font-size:.9rem">Звіти</div>
+              <p class="service-desc">Щомісячні, квартальні, річні звіти до податкової, статистики та ПФУ</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-item" style="border-color:var(--orange);border-width:2px">
+          <div class="service-num" style="background:var(--orange)">03</div>
+          <div>
+            <div class="service-name">Побудова організаційної структури</div>
+            <p class="service-desc">Прописання документообігу та точок контролю для власника під реалії роботи компанії. Оптимізація бізнес-процесів та комунікації в команді.</p>
+            <div class="service-tags"><span class="stag">Оргструктура</span><span class="stag">Документообіг</span><span class="stag">Контроль</span></div>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-num">04</div>
+          <div>
+            <div class="service-name">Ревізія та підвищення кваліфікації</div>
+            <p class="service-desc">Ревізія роботи фінансового відділу компанії та бухгалтерського обліку. Підвищення кваліфікації бухгалтерів та фінансистів вашої команди.</p>
+            <div class="service-tags"><span class="stag">Аудит</span><span class="stag">Навчання</span><span class="stag">Фін. відділ</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm section-beige">
+    <div class="wrap">
+      <div class="cta-banner">
+        <div>
+          <h2 class="cta-title">Потрібен повний облік для ТОВ?</h2>
+          <p class="cta-sub">Залиште заявку — проаналізуємо вашу ситуацію і запропонуємо ефективне рішення.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" onclick="openModal()">Залишити заявку</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /tov -->
+
+
+<!-- ████████  ABOUT  ████████ -->
+<div id="page-about" class="page">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><span onclick="goPage('home')">Головна</span> / Про нас</div>
+      <h1>Про компанію</h1>
+      <p>Компанія, яка створилась сама — через рекомендації та любов до своєї справи</p>
+    </div>
+  </div>
+
+  <!-- Story -->
+  <section class="section section-beige">
+    <div class="wrap">
+      <div class="story-grid">
+        <div>
+          <p class="s-label">Наша історія</p>
+          <h2 class="s-title" style="margin-bottom:1.4rem">15+ років —<br>від оператора<br>до <em>фін.директора</em></h2>
+          <p class="s-sub" style="margin-bottom:1.2rem">Компанія створилась сама — через рекомендації власних клієнтів. Ніколи не мріяла про власну компанію, вважала що ще треба повчитись. Але 7 років тому тато попросив допомогти з бухгалтерією — і так, крок за кроком, виросла команда.</p>
+          <p class="s-sub" style="margin-bottom:1.2rem">Пройшла шлях від оператора з виписки первинних документів до фінансового директора в дистрибуційній компанії зі штатом 200+ осіб. Будувала фінансові відділи, виявляла крадіжки, оптимізувала процеси.</p>
+          <p class="s-sub">Сьогодні обслуговуємо 26+ клієнтів — від ФОП-фрілансерів до ТОВ-виробників зі штатом 50 осіб.</p>
+        </div>
+        <div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot">20</div>
+              <div>
+                <div class="tl-year">з 20 років</div>
+                <div class="tl-title">Початок — оператор в Спецторг</div>
+                <p class="tl-desc">Первинні документи, податкові накладні, акти звірки. Поєднувала денне навчання та роботу з 8 до 18.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot">У</div>
+              <div>
+                <div class="tl-year">Управлінська компанія</div>
+                <div class="tl-title">Старший бухгалтер → Головний бухгалтер</div>
+                <p class="tl-desc">Каса, банківські платежі, авансові звіти по 16 філіалах. Потім — головний бухгалтер по всій мережі.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot">Ф</div>
+              <div>
+                <div class="tl-year">Фоззі Фарм</div>
+                <div class="tl-title">Старший бухгалтер. Перші навчання</div>
+                <p class="tl-desc">Касова дисципліна по всіх аптеках мережі. Виявила проблему → вирішила через навчання фармацевтів, інструкції, шпаргалки.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot">К</div>
+              <div>
+                <div class="tl-year">Кропивницький — кав'ярня</div>
+                <div class="tl-title">Бухгалтер → Директор кафе</div>
+                <p class="tl-desc">3 роки: побудова обліку в 1С з нуля (до цього — зошити), побудова кондитерського цеху. Результат: експорт в Ізраїль, оптові продажі, штат 50 осіб.</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot">ФД</div>
+              <div>
+                <div class="tl-year">Фінансовий директор</div>
+                <div class="tl-title">Дистрибуційна компанія, 200+ осіб</div>
+                <p class="tl-desc">Побудова фінансового відділу з нуля. Нестача по складу: з 1,5 млн грн → 10-12 тис/міс. Виявлення крадіжок, побудова системи контролю.</p>
+              </div>
+            </div>
+            <div class="tl-item" style="padding-bottom:0">
+              <div class="tl-dot">🏢</div>
+              <div>
+                <div class="tl-year">Власна компанія</div>
+                <div class="tl-title">7 років на рекомендаціях</div>
+                <p class="tl-desc">Почала з бухгалтерії для тата в декреті. Сьогодні — 26+ клієнтів, команда фахівців, вся Україна онлайн.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section">
+    <div class="wrap">
+      <div class="s-head" style="text-align:center">
+        <p class="s-label" style="justify-content:center">Команда</p>
+        <h2 class="s-title" style="text-align:center">Наші фахівці</h2>
+        <p class="s-sub" style="max-width:560px;margin:0 auto">Команда, яка не працює у вихідні та після 17:00 — бо гарно працює той, хто гарно відпочиває.</p>
+      </div>
+      <div style="margin-top:3rem">
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-img">
+              <div class="team-img-placeholder">👩‍💼</div>
+            </div>
+            <div class="team-body">
+              <div class="team-name">Марія Панченко</div>
+              <div class="team-role">Засновниця · Фінансовий директор</div>
+              <p class="team-desc">15+ років досвіду. Бухгалтерія, управлінський облік, побудова фінансових відділів. Досвід в компаніях від 10 до 200+ осіб.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-img">
+              <div class="team-img-placeholder">👩‍💻</div>
+            </div>
+            <div class="team-body">
+              <div class="team-name">Бухгалтер ФОП</div>
+              <div class="team-role">Спеціаліст з обліку ФОП</div>
+              <p class="team-desc">Ведення ФОП на єдиному та загальному оподаткуванні, ПРРО, кадровий облік, звіти, первинні документи.</p>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-img">
+              <div class="team-img-placeholder">👩‍🏫</div>
+            </div>
+            <div class="team-body">
+              <div class="team-name">Бухгалтер ТОВ</div>
+              <div class="team-role">Спеціаліст з обліку ТОВ</div>
+              <p class="team-desc">Повний облік ТОВ, ПДВ, реєстрація та розблокування накладних, клієнт-банк, управлінські звіти.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section class="section section-beige2">
+    <div class="wrap">
+      <div class="s-head" style="text-align:center">
+        <p class="s-label" style="justify-content:center">Наші клієнти</p>
+        <h2 class="s-title" style="text-align:center">Кого ми обслуговуємо</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem">
+        <div class="value-card"><div class="value-icon">🏭</div><div class="value-title">ТОВ Виробництво</div><p class="value-desc">Повне ведення бухгалтерського та управлінського обліку. Штат 50 осіб.</p></div>
+        <div class="value-card"><div class="value-icon">🌾</div><div class="value-title">ТОВ Агро-виробництво</div><p class="value-desc">Повний бухгалтерський супровід аграрного підприємства. Штат до 10 осіб.</p></div>
+        <div class="value-card"><div class="value-icon">🚗</div><div class="value-title">ТОВ Автошкола</div><p class="value-desc">Бухгалтерський та кадровий облік. Штат до 20 осіб.</p></div>
+        <div class="value-card"><div class="value-icon">📦</div><div class="value-title">ТОВ Імпорт товарів</div><p class="value-desc">Облік з ПДВ, імпортні операції, первинні документи. Штат до 10 осіб.</p></div>
+        <div class="value-card"><div class="value-icon">💼</div><div class="value-title">ФОП з ПДВ</div><p class="value-desc">Повний бухгалтерський супровід ФОП на загальній системі з ПДВ.</p></div>
+        <div class="value-card"><div class="value-icon">🛍️</div><div class="value-title">ФОП послуги (20 клієнтів)</div><p class="value-desc">Щомісячний супровід ФОП 2-3 групи на єдиному оподаткуванні.</p></div>
+      </div>
+    </div>
+  </section>
+</div><!-- /about -->
+
+
+<!-- ████████  CONTACT  ████████ -->
+<div id="page-contact" class="page">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><span onclick="goPage('home')">Головна</span> / Контакти</div>
+      <h1>Зв'яжіться з нами</h1>
+      <p>Відповідаємо в робочий час — пн–пт до 17:00. Перша консультація безкоштовна.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <p class="s-label">Контакти</p>
+          <h2 class="s-title" style="margin-bottom:1.5rem">Як з нами<br>зв'язатись</h2>
+          <div class="contact-block">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Телефон</h4>
+              <p><a href="tel:+380663568040">066-356-80-40</a></p>
+              <small>Марія Панченко · пн-пт 9:00–17:00</small>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">✈️</div>
+            <div>
+              <h4>Telegram</h4>
+              <p><a href="https://t.me/MariiaPanchenko_ua" target="_blank">@MariiaPanchenko_ua</a></p>
+              <small>Зручно для ділових питань</small>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">📸</div>
+            <div>
+              <h4>Instagram</h4>
+              <p><a href="https://instagram.com/Mariia_Panchenko_ua" target="_blank">@Mariia_Panchenko_ua</a></p>
+              <small>Публікації та корисний контент</small>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Місто</h4>
+              <p>Кропивницький</p>
+              <small>Онлайн-супровід по всій Україні</small>
+            </div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Графік роботи</h4>
+              <p>Пн–Пт: 9:00 – 17:00</p>
+              <small>У вихідні відпочиваємо 😊</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-title">Залишити заявку</div>
+          <p class="form-sub">Заповніть форму — зв'яжемося з вами та проведемо безкоштовну первинну консультацію.</p>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Ваше ім'я *</label><input class="form-input" placeholder="Олена Коваль" id="c-name"></div>
+            <div class="form-group"><label class="form-label">Телефон *</label><input class="form-input" type="tel" placeholder="+38 (0__) ___-__-__" id="c-phone"></div>
+          </div>
+          <div class="form-group"><label class="form-label">Форма бізнесу</label>
+            <select class="form-input" id="c-type">
+              <option value="">Оберіть…</option>
+              <option>ФОП (хочу відкрити)</option>
+              <option>ФОП (вже є, потрібен супровід)</option>
+              <option>ТОВ (хочу відкрити)</option>
+              <option>ТОВ (вже є, потрібен супровід)</option>
+              <option>Потрібна консультація</option>
+              <option>Інше</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Яка послуга цікавить?</label>
+            <select class="form-input" id="c-service">
+              <option value="">Оберіть…</option>
+              <option>Реєстрація ФОП/ТОВ</option>
+              <option>Щомісячний бухгалтерський супровід</option>
+              <option>Кадровий облік</option>
+              <option>Управлінський облік (P&L, Cashflow)</option>
+              <option>Фінансовий моніторинг у банку</option>
+              <option>Закриття ФОП</option>
+              <option>Ревізія обліку</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">Коментар</label><textarea class="form-input" placeholder="Розкажіть про ваш бізнес та запит…" id="c-msg"></textarea></div>
+          <button class="btn btn-primary btn-full btn-lg" onclick="submitContact()">Надіслати заявку 💼</button>
+          <div class="form-success" id="contactSuccess">✅ Дякуємо! Марія зв'яжеться з вами найближчим часом.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div><!-- /contact -->
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Марія Панченко</div>
+        <p class="footer-desc">Бухгалтерський та фінансовий супровід ФОП і ТОВ. Кропивницький та онлайн по всій Україні.</p>
+        <div class="footer-socials">
+          <a href="https://t.me/MariiaPanchenko_ua" target="_blank" class="fsoc">tg</a>
+          <a href="https://instagram.com/Mariia_Panchenko_ua" target="_blank" class="fsoc">ig</a>
+          <a href="tel:+380663568040" class="fsoc">📞</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Послуги</h4>
+        <span onclick="goPage('fop')">Реєстрація ФОП</span>
+        <span onclick="goPage('fop')">Супровід ФОП</span>
+        <span onclick="goPage('tov')">Реєстрація ТОВ</span>
+        <span onclick="goPage('tov')">Повний облік ТОВ</span>
+        <span onclick="goPage('fop')">Кадровий облік</span>
+      </div>
+      <div class="footer-col">
+        <h4>Компанія</h4>
+        <span onclick="goPage('about')">Про нас</span>
+        <span onclick="goPage('about')">Команда</span>
+        <span onclick="goPage('about')">Наші клієнти</span>
+        <span onclick="goPage('contact')">Контакти</span>
+      </div>
+      <div class="footer-col">
+        <h4>Зв'язок</h4>
+        <a href="tel:+380663568040">066-356-80-40</a>
+        <a href="https://t.me/MariiaPanchenko_ua" target="_blank">Telegram</a>
+        <a href="https://instagram.com/Mariia_Panchenko_ua" target="_blank">Instagram</a>
+        <span style="opacity:.5">Пн–Пт: 9:00–17:00</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Марія Панченко. Бухгалтерський та фінансовий супровід.</span>
+      <div class="footer-legal"><a href="#">Конфіденційність</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOAT CTA -->
+<button class="float-cta" onclick="openModal()">
+  💼 <span class="fc-text">Залишити заявку</span>
+</button>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <p class="modal-eyebrow">Безкоштовна консультація</p>
+    <h3 class="modal-title">Залишити заявку</h3>
+    <p class="modal-sub">Зв'яжемося з вами в робочий час та проведемо безкоштовну первинну консультацію.</p>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Ваше ім'я</label><input class="form-input" placeholder="Олена Коваль" id="m-name"></div>
+      <div class="form-group"><label class="form-label">Телефон</label><input class="form-input" type="tel" placeholder="+38 (0__) ___-__-__" id="m-phone"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Що цікавить?</label>
+      <select class="form-input" id="m-service">
+        <option value="">Оберіть…</option>
+        <option>Реєстрація ФОП</option>
+        <option>Супровід ФОП</option>
+        <option>Реєстрація ТОВ</option>
+        <option>Повний облік ТОВ</option>
+        <option>Управлінський облік</option>
+        <option>Кадровий облік</option>
+        <option>Консультація</option>
+      </select>
+    </div>
+    <div class="form-group"><label class="form-label">Коментар</label><textarea class="form-input" style="min-height:70px" placeholder="Коротко про ваш бізнес…" id="m-msg"></textarea></div>
+    <button class="btn btn-primary btn-full btn-lg" onclick="submitModal()">Надіслати →</button>
+    <div class="form-success" id="modalSuccess">✅ Дякуємо! Марія зв'яжеться з вами найближчим часом.</div>
+  </div>
+</div>
+
+<div class="toast" id="globalToast"></div>
+
+<script>
+/* Router */
+const PAGES=['home','fop','tov','about','contact'];
+function goPage(id){
+  PAGES.forEach(p=>{
+    document.getElementById('page-'+p)?.classList.remove('active');
+    document.getElementById('nl-'+p)?.classList.remove('active');
+  });
+  document.getElementById('page-'+id)?.classList.add('active');
+  document.getElementById('nl-'+id)?.classList.add('active');
+  document.querySelectorAll('.mob-link').forEach((l,i)=>l.classList.toggle('active',PAGES[i]===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
+
+/* FAQ */
+function tFaq(btn){
+  const a=btn.nextElementSibling;
+  const open=btn.classList.contains('open');
+  document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});
+  if(!open){btn.classList.add('open');a.classList.add('open')}
+}
+
+/* Toast */
+function showToast(msg){
+  const t=document.getElementById('globalToast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),3200);
+}
+
+/* Modal */
+function openModal(){document.getElementById('modalOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
+function submitModal(){
+  const n=document.getElementById('m-name').value.trim();
+  const p=document.getElementById('m-phone').value.trim();
+  if(!n||!p){showToast('⚠️ Введіть ім\'я та телефон');return}
+  document.getElementById('modalSuccess').classList.add('show');
+  showToast('💼 Заявку надіслано!');
+  setTimeout(()=>{closeModal();document.getElementById('modalSuccess').classList.remove('show');['m-name','m-phone','m-service','m-msg'].forEach(id=>document.getElementById(id).value='')},1800);
+}
+function submitContact(){
+  const n=document.getElementById('c-name').value.trim();
+  const p=document.getElementById('c-phone').value.trim();
+  if(!n||!p){showToast('⚠️ Введіть ім\'я та телефон');return}
+  document.getElementById('contactSuccess').classList.add('show');
+  showToast('💼 Заявку надіслано!');
+  ['c-name','c-phone','c-type','c-service','c-msg'].forEach(id=>document.getElementById(id).value='');
+}
+</script>
+</body>
+</html>
